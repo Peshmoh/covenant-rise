@@ -1482,6 +1482,10 @@ main {
     color: var(--blue-dark);
 }
 
+.site-footer .footer-grid > div:last-child .footer-copy {
+    line-height: 1.95;
+}
+
 .footer-links {
     display: grid;
     gap: 10px;
