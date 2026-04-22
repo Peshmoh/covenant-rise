@@ -35,6 +35,10 @@ $pageData = static function (
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::redirect('/services', '/about#services')->name('services');
+Route::redirect('/leadership', '/about#leadership')->name('leadership');
+Route::redirect('/sermons', '/media#sermons')->name('sermons');
+Route::redirect('/blogs', '/media#blogs')->name('blogs');
+Route::redirect('/gallery', '/media#gallery')->name('gallery');
 
 $staticPages = [
     '/about' => [
@@ -42,45 +46,93 @@ $staticPages = [
         'data' => $pageData(
             'Our Story',
             'About',
-            'A covenant family built to help people grow in Christ',
-            'Covenant Rise Ministries is more than a Sunday gathering. We are a family learning to worship Jesus with sincerity, grow in the Word, and serve people with practical love. Our aim is to help every person belong, believe, and become all God has called them to be.',
-            'Learn the heart behind Covenant Rise Ministries, what we believe, and how we serve together in Nairobi.',
-            [
-                [
-                    'icon' => 'fas fa-eye',
-                    'title' => 'Vision',
-                    'text' => 'To raise a covenant people who live free, rooted in scripture, and confident in their calling.',
-                ],
-                [
-                    'icon' => 'fas fa-bullseye',
-                    'title' => 'Mission',
-                    'text' => 'To equip believers through worship, the Word, prayer, discipleship, and acts of compassion.',
-                ],
-                [
-                    'icon' => 'fas fa-cross',
-                    'title' => 'Culture',
-                    'text' => 'Jesus is the center of our worship, teaching, service, and daily life.',
-                ],
-                [
-                    'icon' => 'fas fa-hands-holding-heart',
-                    'title' => 'Community Care',
-                    'text' => 'We value pastoral care, follow-up, and practical support for families, youth, and first-time guests.',
-                ],
-            ],
+            'A covenant family built to help people grow in Christ through worship, prayer, leadership, and faithful service.',
+            'Covenant Rise Ministries is more than a Sunday gathering. We are a church family learning to worship Jesus sincerely, grow in the Word, and serve people with practical love in Nairobi.',
+            'Explore our story, vision, leadership, and weekly services below in one simple, easy-to-follow place.',
+            [],
             null,
             null,
-            'vision',
+            null,
             [
-                'Covenant Rise Ministries began with a simple desire to create a church home where faith feels alive, the Bible remains central, and prayer shapes everyday life. We believe the local church should be a place of healing, discipleship, and courage.',
-                'Our services are designed to help people take their next step in Christ. From Sunday worship to midweek study and prayer meetings, we gather around the Word, encourage one another, and make room for the presence of God to transform lives.',
-                'As you get to know us, you will find a ministry that values excellence without losing warmth, truth without losing grace, and conviction without losing compassion. We would love to walk with you, pray with you, and help you find your place in the family.',
+                'Covenant Rise Ministries began with a desire to create a church home where faith feels alive, Scripture stays central, and prayer shapes everyday life.',
+                'We believe the local church should be a place of healing, discipleship, and courage where people belong, believe, and become all God has called them to be.',
+                'As you get to know us, you will find a ministry that values excellence without losing warmth, truth without losing grace, and conviction without losing compassion.',
             ],
             [
-                ['label' => 'Our Services', 'url' => '#services', 'class' => 'btn btn-outline'],
-                ['label' => 'Plan a Visit', 'url' => '/visit', 'class' => 'btn btn-gold'],
-                ['label' => 'Contact Us', 'url' => '/contact', 'class' => 'btn btn-outline'],
+                ['label' => 'Our Story', 'url' => '#story', 'class' => 'btn btn-outline'],
+                ['label' => 'Vision & Mission', 'url' => '#vision-mission', 'class' => 'btn btn-outline'],
+                ['label' => 'Leadership', 'url' => '#leadership', 'class' => 'btn btn-outline'],
+                ['label' => 'Our Services', 'url' => '#services', 'class' => 'btn btn-gold'],
             ],
             [
+                [
+                    'id' => 'story',
+                    'eyebrow' => 'Our Story',
+                    'title' => 'How Covenant Rise Ministries began and why we keep growing',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-seedling',
+                            'title' => 'Our Beginning',
+                            'text' => 'We started with a simple burden to build a Christ-centered home for worship, prayer, discipleship, and practical care.',
+                        ],
+                        [
+                            'icon' => 'fas fa-house-church',
+                            'title' => 'Our Heart',
+                            'text' => 'We want people to find faith, healing, belonging, and a place to grow in purpose together.',
+                        ],
+                        [
+                            'icon' => 'fas fa-compass',
+                            'title' => 'Our Direction',
+                            'text' => 'We keep the Bible central, value prayer, and serve people with a steady spirit of grace and truth.',
+                        ],
+                    ],
+                ],
+                [
+                    'id' => 'vision-mission',
+                    'eyebrow' => 'Vision & Mission',
+                    'title' => 'A clear calling that shapes every gathering',
+                    'copy' => 'Our vision and mission guide how we worship, disciple, and serve the community.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-eye',
+                            'title' => 'Vision',
+                            'text' => 'To raise a covenant people who live free, rooted in Scripture, and confident in their calling.',
+                        ],
+                        [
+                            'icon' => 'fas fa-bullseye',
+                            'title' => 'Mission',
+                            'text' => 'To equip believers through worship, the Word, prayer, discipleship, and acts of compassion.',
+                        ],
+                        [
+                            'icon' => 'fas fa-check-double',
+                            'title' => 'Values',
+                            'text' => 'Bible rooted, prayer filled, Spirit led, and community built.',
+                        ],
+                    ],
+                ],
+                [
+                    'id' => 'leadership',
+                    'eyebrow' => 'Leadership',
+                    'title' => 'Servant leadership that listens, prays, and guides',
+                    'copy' => 'Leadership at Covenant Rise Ministries is built around service, accountability, and care for people.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-user-tie',
+                            'title' => 'Shepherding',
+                            'text' => 'We lead by serving, teaching, and caring for people with humility and responsibility.',
+                        ],
+                        [
+                            'icon' => 'fas fa-hands-praying',
+                            'title' => 'Prayerful Oversight',
+                            'text' => 'We seek God together and make decisions through prayer, wisdom, and unity.',
+                        ],
+                        [
+                            'icon' => 'fas fa-people-group',
+                            'title' => 'Team Ministry',
+                            'text' => 'Ministry is shared work, and we equip people to use their gifts well for the church and the city.',
+                        ],
+                    ],
+                ],
                 [
                     'id' => 'services',
                     'eyebrow' => 'Our Services',
@@ -112,33 +164,98 @@ $staticPages = [
             ],
         ),
     ],
-    '/leadership' => [
-        'name' => 'leadership',
+    '/media' => [
+        'name' => 'media',
         'data' => $pageData(
-            'Leadership',
-            'Meet the Team',
-            'Leaders who serve with humility, prayer, and conviction',
-            'Our leadership culture is built on shared service, accountable stewardship, and a deep love for people.',
-            'Meet the leaders who help guide Covenant Rise Ministries.',
+            'Media',
+            'Church Media',
+            'Sermons, blogs, and gallery moments that tell our story',
+            'Our media space helps us share teaching, reflections, and visual moments from church life so the message stays visible during the week.',
+            'Explore sermons, blogs, and gallery highlights from Covenant Rise Ministries.',
+            [],
+            null,
+            null,
+            null,
+            [
+                'Use the sections below to jump straight to sermons, blogs, or gallery highlights.',
+                'We keep the media space simple, clear, and useful for people who want to stay connected beyond Sunday.',
+            ],
+            [
+                ['label' => 'Sermons', 'url' => '#sermons', 'class' => 'btn btn-gold'],
+                ['label' => 'Blogs', 'url' => '#blogs', 'class' => 'btn btn-outline'],
+                ['label' => 'Gallery', 'url' => '#gallery', 'class' => 'btn btn-outline'],
+            ],
             [
                 [
-                    'icon' => 'fas fa-user-tie',
-                    'title' => 'Shared Stewardship',
-                    'text' => 'Leadership is a calling to serve well, not a title to hold tightly.',
+                    'id' => 'sermons',
+                    'eyebrow' => 'Sermons',
+                    'title' => 'Messages that keep the Bible at the center',
+                    'copy' => 'Listen to preaching, teaching, and prayerful encouragement from the pulpit.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-play',
+                            'title' => 'Sunday Messages',
+                            'text' => 'Weekly preaching that points people back to Scripture and Christ.',
+                        ],
+                        [
+                            'icon' => 'fas fa-list-check',
+                            'title' => 'Teaching Series',
+                            'text' => 'Longer conversations that build faith and practical understanding.',
+                        ],
+                        [
+                            'icon' => 'fas fa-hands-praying',
+                            'title' => 'Prayer Moments',
+                            'text' => 'Encouraging moments from prayer nights, worship, and ministry time.',
+                        ],
+                    ],
                 ],
                 [
-                    'icon' => 'fas fa-user-group',
-                    'title' => 'Pastoral Care',
-                    'text' => 'We want people to be known, prayed for, and encouraged with wisdom.',
+                    'id' => 'blogs',
+                    'eyebrow' => 'Blogs',
+                    'title' => 'Encouragement for daily living and discipleship',
+                    'copy' => 'Written reflections help people carry Sunday truth into everyday life.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-pen-nib',
+                            'title' => 'Devotional Notes',
+                            'text' => 'Short reflections to strengthen faith, prayer, and consistency with God.',
+                        ],
+                        [
+                            'icon' => 'fas fa-heart',
+                            'title' => 'Faith Stories',
+                            'text' => 'Stories of how God is working in people, families, and the wider church family.',
+                        ],
+                        [
+                            'icon' => 'fas fa-book-open',
+                            'title' => 'Teaching Reflections',
+                            'text' => 'Simple written insights from sermons and Bible study moments.',
+                        ],
+                    ],
                 ],
                 [
-                    'icon' => 'fas fa-seedling',
-                    'title' => 'Raising Leaders',
-                    'text' => 'We invest in new leaders through mentoring, training, and responsibility.',
+                    'id' => 'gallery',
+                    'eyebrow' => 'Gallery',
+                    'title' => 'Snapshots of worship, outreach, and church family life',
+                    'copy' => 'Photos help us celebrate the moments that shape church life and community.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-church',
+                            'title' => 'Sunday Worship',
+                            'text' => 'Images from services, worship gatherings, and moments in the sanctuary.',
+                        ],
+                        [
+                            'icon' => 'fas fa-people-group',
+                            'title' => 'Community Outreach',
+                            'text' => 'Scenes from outreach, prayer support, and practical service in Nairobi.',
+                        ],
+                        [
+                            'icon' => 'fas fa-camera-retro',
+                            'title' => 'Ministry Gatherings',
+                            'text' => 'Photos from leadership moments, youth meetings, and special church events.',
+                        ],
+                    ],
                 ],
             ],
-            ['label' => 'Contact Us', 'url' => '/contact'],
-            ['label' => 'About Us', 'url' => '/about'],
         ),
     ],
     '/visit' => [
@@ -170,35 +287,6 @@ $staticPages = [
             ['label' => 'Contact Us', 'url' => '/contact'],
         ),
     ],
-    '/sermons' => [
-        'name' => 'sermons',
-        'data' => $pageData(
-            'Sermons',
-            'Messages',
-            'Teaching that keeps the Bible at the center',
-            'Browse the latest sermons and return to the message that speaks to your current season.',
-            'Explore the sermon archive from Covenant Rise Ministries.',
-            [
-                [
-                    'icon' => 'fas fa-book-bible',
-                    'title' => 'Latest Messages',
-                    'text' => 'Stay current with the most recent teaching from the pulpit.',
-                ],
-                [
-                    'icon' => 'fas fa-play',
-                    'title' => 'Watch Again',
-                    'text' => 'Use the archive when you want to revisit a message or share it.',
-                ],
-                [
-                    'icon' => 'fas fa-share-nodes',
-                    'title' => 'Share Hope',
-                    'text' => 'Messages are a simple way to encourage friends and family.',
-                ],
-            ],
-            ['label' => 'Watch Online', 'url' => '/online-church'],
-            ['label' => 'See Events', 'url' => '/events'],
-        ),
-    ],
     '/ministries' => [
         'name' => 'ministries',
         'data' => $pageData(
@@ -224,7 +312,7 @@ $staticPages = [
                     'text' => 'Practical ministry through worship, welcome, logistics, and outreach.',
                 ],
             ],
-            ['label' => 'Leadership', 'url' => '/leadership'],
+            ['label' => 'Leadership', 'url' => '/about#leadership'],
             ['label' => 'Contact Us', 'url' => '/contact'],
         ),
     ],
@@ -233,28 +321,70 @@ $staticPages = [
         'data' => $pageData(
             'Events',
             'Church Calendar',
-            'Gatherings that build faith and community',
-            'Stay connected to what is happening across the ministry and take your next step into community.',
-            'See what is coming up at Covenant Rise Ministries.',
+            'Upcoming events, past events, and a simple way to plan your visit',
+            'Stay connected to the life of the church through gatherings, prayer nights, and special moments that build community.',
+            'See what is happening at Covenant Rise Ministries and find the next gathering that fits your season.',
+            [],
+            null,
+            null,
+            null,
+            [
+                'Use the section links below to jump to upcoming events, past events, or a simple visit guide.',
+                'We keep the calendar clear so guests and members can quickly find what matters most.',
+            ],
+            [
+                ['label' => 'Upcoming Events', 'url' => '#upcoming-events', 'class' => 'btn btn-gold'],
+                ['label' => 'Past Events', 'url' => '#past-events', 'class' => 'btn btn-outline'],
+                ['label' => 'Plan a Visit', 'url' => '/visit', 'class' => 'btn btn-outline'],
+            ],
             [
                 [
-                    'icon' => 'fas fa-calendar-days',
-                    'title' => 'Prayer Nights',
-                    'text' => 'Focused evenings of worship and intercession that strengthen the church.',
+                    'id' => 'upcoming-events',
+                    'eyebrow' => 'Upcoming Events',
+                    'title' => 'What is coming up next',
+                    'copy' => 'These gatherings are coming up soon and help us worship, grow, and serve together.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-calendar-days',
+                            'title' => 'Friday Prayer Night',
+                            'text' => 'Every Friday at 6:00 PM in the main sanctuary with worship and intercession.',
+                        ],
+                        [
+                            'icon' => 'fas fa-church',
+                            'title' => 'Sunday Worship',
+                            'text' => 'Every Sunday at 9:00 AM for worship, teaching, and fellowship.',
+                        ],
+                        [
+                            'icon' => 'fas fa-people-group',
+                            'title' => 'Youth Gathering',
+                            'text' => 'A time for students and young adults to worship, learn, and grow together.',
+                        ],
+                    ],
                 ],
                 [
-                    'icon' => 'fas fa-people-group',
-                    'title' => 'Youth Gatherings',
-                    'text' => 'Rhythms that help students and young adults stay connected and encouraged.',
-                ],
-                [
-                    'icon' => 'fas fa-bullhorn',
-                    'title' => 'Outreach Sunday',
-                    'text' => 'Opportunities to serve the community with practical love and prayer.',
+                    'id' => 'past-events',
+                    'eyebrow' => 'Past Events',
+                    'title' => 'Moments we have celebrated together',
+                    'copy' => 'These are examples of the kind of gatherings and ministry moments we have shared as a church family.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-photo-film',
+                            'title' => 'Community Outreach Sunday',
+                            'text' => 'Serving neighbors with prayer, practical help, and encouragement.',
+                        ],
+                        [
+                            'icon' => 'fas fa-microphone-lines',
+                            'title' => 'Revival Night',
+                            'text' => 'A night of worship, testimony, and prayer that stirred the whole church.',
+                        ],
+                        [
+                            'icon' => 'fas fa-people-roof',
+                            'title' => 'Family Sunday',
+                            'text' => 'A special gathering of every generation in one united service.',
+                        ],
+                    ],
                 ],
             ],
-            ['label' => 'Give', 'url' => '/give'],
-            ['label' => 'Plan a Visit', 'url' => '/visit'],
         ),
     ],
     '/give' => [
@@ -311,7 +441,7 @@ $staticPages = [
                     'text' => 'Use the online space to keep in touch and send prayer needs.',
                 ],
             ],
-            ['label' => 'Watch Sermons', 'url' => '/sermons'],
+            ['label' => 'Watch Sermons', 'url' => '/media#sermons'],
             ['label' => 'Prayer Request', 'url' => '/prayer'],
         ),
     ],
@@ -422,7 +552,7 @@ Route::get('/sermons/{slug}', function (string $slug) use ($pageData) {
                 'text' => 'Add notes, downloads, and easy ways to share the message.',
             ],
         ],
-        ['label' => 'Back to Sermons', 'url' => '/sermons'],
+        ['label' => 'Back to Media', 'url' => '/media#sermons'],
         ['label' => 'Watch Online', 'url' => '/online-church'],
     ));
 })->name('sermons.show');

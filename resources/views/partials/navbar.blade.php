@@ -16,37 +16,41 @@
             </li>
 
             <li class="has-dropdown">
-                <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about*', 'leadership', 'services', 'visit') ? 'active' : '' }}">
+                <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about*', 'leadership', 'services') ? 'active' : '' }}">
                     About <i class="fas fa-chevron-down caret"></i>
                 </a>
                 <div class="dropdown">
-                    <a href="{{ route('about') }}">Our Story</a>
-                    <a href="{{ route('about') }}#vision">Vision and Mission</a>
-                    <a href="{{ route('leadership') }}">Leadership</a>
+                    <a href="{{ route('about') }}#story">Our Story</a>
+                    <a href="{{ route('about') }}#vision-mission">Vision &amp; Mission</a>
+                    <a href="{{ route('about') }}#leadership">Leadership</a>
                     <a href="{{ route('about') }}#services">Our Services</a>
+                </div>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="{{ route('media') }}" class="nav-link {{ request()->routeIs('media*', 'sermons', 'blogs', 'gallery') ? 'active' : '' }}">
+                    Media <i class="fas fa-chevron-down caret"></i>
+                </a>
+                <div class="dropdown">
+                    <a href="{{ route('media') }}#sermons">Sermons</a>
+                    <a href="{{ route('media') }}#blogs">Blogs</a>
+                    <a href="{{ route('media') }}#gallery">Gallery</a>
+                </div>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="{{ route('events') }}" class="nav-link {{ request()->routeIs('events*', 'visit') ? 'active' : '' }}">
+                    Events <i class="fas fa-chevron-down caret"></i>
+                </a>
+                <div class="dropdown">
+                    <a href="{{ route('events') }}#upcoming-events">Upcoming Events</a>
+                    <a href="{{ route('events') }}#past-events">Past Events</a>
                     <a href="{{ route('visit') }}">Plan a Visit</a>
                 </div>
             </li>
 
             <li>
-                <a href="{{ route('sermons') }}" class="nav-link {{ request()->routeIs('sermons*') ? 'active' : '' }}">Sermons</a>
-            </li>
-
-            <li class="has-dropdown">
-                <a href="{{ route('ministries') }}" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">
-                    Ministries <i class="fas fa-chevron-down caret"></i>
-                </a>
-                <div class="dropdown">
-                    <a href="{{ route('ministries.show', 'mens') }}">Men's Ministry</a>
-                    <a href="{{ route('ministries.show', 'womens') }}">Women's Ministry</a>
-                    <a href="{{ route('ministries.show', 'youth') }}">Youth Ministry</a>
-                    <a href="{{ route('ministries.show', 'children') }}">Children's Ministry</a>
-                    <a href="{{ route('ministries.show', 'prayer') }}">Prayer Ministry</a>
-                </div>
-            </li>
-
-            <li>
-                <a href="{{ route('events') }}" class="nav-link {{ request()->routeIs('events*') ? 'active' : '' }}">Events</a>
+                <a href="{{ route('ministries') }}" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Ministries</a>
             </li>
 
             <li>

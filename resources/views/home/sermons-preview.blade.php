@@ -33,7 +33,7 @@
         </div>
 
         <div class="section-footer">
-            <a href="{{ route('sermons') }}" class="btn btn-outline">Browse all sermons</a>
+            <a href="{{ route('media') }}#sermons" class="btn btn-outline">Browse all sermons</a>
         </div>
     </div>
 </section>

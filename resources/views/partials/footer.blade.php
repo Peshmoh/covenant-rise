@@ -20,7 +20,7 @@
                 <h3 class="footer-heading">Quick Links</h3>
                 <div class="footer-links">
                     <a href="{{ route('about') }}">Our Story</a>
-                    <a href="{{ route('sermons') }}">Sermons</a>
+                    <a href="{{ route('media') }}">Media</a>
                     <a href="{{ route('events') }}">Events</a>
                     <a href="{{ route('prayer') }}">Prayer Request</a>
                     <a href="{{ route('give') }}">Give</a>
