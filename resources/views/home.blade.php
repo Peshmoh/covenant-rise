@@ -101,7 +101,6 @@
 
     @include('partials.ticker')
     @include('home.about-preview')
-    @include('home.vision-mission')
     @include('home.sermons-preview', ['sermons' => $latestSermons])
     @include('home.events-preview', ['events' => $upcomingEvents])
     @include('home.testimonies', ['testimonies' => $testimonies])

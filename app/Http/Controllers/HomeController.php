@@ -44,21 +44,9 @@ class HomeController extends Controller
             ],
             [
                 'icon' => 'fas fa-people-group',
-                'title' => 'Family Mission',
+                'title' => 'Shared Purpose',
                 'text' => 'We want every generation to feel seen, equipped, and ready to serve together.',
             ],
-        ];
-
-        $visionPoints = [
-            'Teach the Word with clarity and practical application.',
-            'Build a people who pray first and move with wisdom.',
-            'Raise disciples who serve their city with courage and compassion.',
-        ];
-
-        $missionPoints = [
-            'Gather believers for worship, prayer, and biblical teaching.',
-            'Create pathways for discipleship, mentoring, and leadership growth.',
-            'Reach families and communities through mercy, service, and outreach.',
         ];
 
         $latestSermons = [
@@ -150,8 +138,6 @@ class HomeController extends Controller
         return view('home', compact(
             'serviceTimes',
             'aboutHighlights',
-            'visionPoints',
-            'missionPoints',
             'latestSermons',
             'upcomingEvents',
             'testimonies',
