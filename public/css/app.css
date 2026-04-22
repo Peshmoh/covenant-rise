@@ -113,6 +113,10 @@ main {
     padding: clamp(68px, 8vw, 118px) 0;
 }
 
+.section-compact-top {
+    padding-top: clamp(34px, 4vw, 72px);
+}
+
 .section-alt {
     background: linear-gradient(180deg, rgba(16, 66, 207, 0.035), rgba(16, 66, 207, 0.012));
 }

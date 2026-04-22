@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section section-compact-top">
     <div class="container">
         <div class="section-header">
             <div class="section-kicker">Latest Sermons</div>
