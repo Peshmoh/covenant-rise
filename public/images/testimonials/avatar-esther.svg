@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esther portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0c94b"/>
+      <stop offset="50%" stop-color="#d63c5e"/>
+      <stop offset="100%" stop-color="#1466d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="128" fill="url(#bg)"/>
+  <circle cx="194" cy="70" r="52" fill="#ffffff" fill-opacity="0.13"/>
+  <circle cx="64" cy="190" r="70" fill="#1466d2" fill-opacity="0.11"/>
+  <path d="M68 187c11-30 36-49 60-49s49 19 60 49v19H68z" fill="#2d476a"/>
+  <circle cx="128" cy="104" r="42" fill="#eac5a2"/>
+  <path d="M74 96c0-33 25-59 54-59s54 26 54 59c-11-7-23-11-35-11h-38c-12 0-24 4-35 11z" fill="#2f1f35"/>
+  <path d="M87 98c7-25 22-38 41-38s34 13 41 38c3 9 4 18 4 26H83c0-8 1-17 4-26z" fill="#4d2a52"/>
+  <circle cx="112" cy="101" r="4" fill="#3c251a"/>
+  <circle cx="144" cy="101" r="4" fill="#3c251a"/>
+  <path d="M114 117c8 7 20 7 28 0" stroke="#a67049" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="95" cy="114" r="2.8" fill="#f8e8d8"/>
+  <circle cx="161" cy="114" r="2.8" fill="#f8e8d8"/>
+</svg>

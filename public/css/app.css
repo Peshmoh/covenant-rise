@@ -1060,6 +1060,53 @@ main {
     gap: 14px;
 }
 
+.sermon-marquee {
+    position: relative;
+    overflow: hidden;
+    margin-top: 6px;
+    padding: 10px 0 18px;
+}
+
+.sermon-marquee::before,
+.sermon-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 88px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sermon-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(246, 248, 252, 0.98), rgba(246, 248, 252, 0));
+}
+
+.sermon-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(246, 248, 252, 0.98), rgba(246, 248, 252, 0));
+}
+
+.sermon-track {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    width: max-content;
+    animation: sermon-marquee 40s linear infinite;
+    will-change: transform;
+}
+
+.sermon-marquee:hover .sermon-track,
+.sermon-marquee:focus-within .sermon-track {
+    animation-play-state: paused;
+}
+
+.sermon-track .sermon-card {
+    flex: 0 0 340px;
+    width: min(340px, 82vw);
+}
+
 .sermon-thumb {
     position: relative;
     height: 180px;
@@ -1126,6 +1173,10 @@ main {
 .sermon-excerpt {
     color: var(--muted);
     line-height: 1.8;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
 .sermon-footer {
@@ -1211,41 +1262,119 @@ main {
     margin-top: auto;
 }
 
-.testimony-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
 .testimony-card {
     position: relative;
+    width: min(340px, 82vw);
+    flex: 0 0 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.quote-mark {
+.testimony-marquee {
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+    padding: 10px 0 18px;
+}
+
+.testimony-marquee::before,
+.testimony-marquee::after {
+    content: "";
     position: absolute;
-    top: 18px;
-    right: 22px;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 4rem;
-    line-height: 1;
-    color: rgba(16, 66, 207, 0.14);
+    top: 0;
+    bottom: 0;
+    width: 88px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.testimony-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(246, 248, 252, 0.98), rgba(246, 248, 252, 0));
+}
+
+.testimony-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(246, 248, 252, 0.98), rgba(246, 248, 252, 0));
+}
+
+.testimony-track {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    width: max-content;
+    animation: testimony-marquee 44s linear infinite;
+    will-change: transform;
+}
+
+.testimony-marquee:hover .testimony-track,
+.testimony-marquee:focus-within .testimony-track {
+    animation-play-state: paused;
+}
+
+.testimony-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.testimony-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    flex: 0 0 64px;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 22px rgba(16, 66, 207, 0.16);
+    background: linear-gradient(135deg, rgba(16, 66, 207, 0.12), rgba(221, 181, 46, 0.12));
+}
+
+.testimony-meta {
+    min-width: 0;
+}
+
+.testimony-score {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    padding: 0.42rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(221, 181, 46, 0.14);
+    color: var(--wine);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
 }
 
 .testimony-quote {
-    padding-right: 40px;
+    padding-right: 0;
     color: var(--text);
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.testimony-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ddb52e;
+    font-size: 0.82rem;
+}
+
+.testimony-stars .is-muted {
+    color: rgba(221, 181, 46, 0.22);
 }
 
 .testimony-author {
-    margin-top: 18px;
     font-weight: 800;
     color: var(--blue-dark);
 }
 
 .testimony-role {
-    margin-top: 6px;
+    margin-top: 4px;
     color: var(--muted);
     font-size: 0.85rem;
 }
@@ -1594,8 +1723,7 @@ main {
         margin: 0 auto;
     }
 
-    .sermon-grid,
-    .testimony-grid {
+    .sermon-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1653,7 +1781,6 @@ main {
     }
 
     .sermon-grid,
-    .testimony-grid,
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -1729,6 +1856,36 @@ main {
 
     .cta-banner {
         border-radius: 26px;
+    }
+
+    .testimony-card {
+        flex-basis: min(300px, 84vw);
+        width: min(300px, 84vw);
+    }
+
+    .sermon-track .sermon-card {
+        flex-basis: min(300px, 84vw);
+        width: min(300px, 84vw);
+    }
+}
+
+@keyframes testimony-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes sermon-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }
 

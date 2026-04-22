@@ -1,0 +1,20 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daniel portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f45d6"/>
+      <stop offset="58%" stop-color="#1d78d6"/>
+      <stop offset="100%" stop-color="#ddb52e"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="128" fill="url(#bg)"/>
+  <circle cx="194" cy="62" r="54" fill="#ffffff" fill-opacity="0.14"/>
+  <circle cx="62" cy="196" r="70" fill="#0f45d6" fill-opacity="0.12"/>
+  <path d="M64 185c11-29 37-48 64-48s53 19 64 48v21H64z" fill="#233f67"/>
+  <circle cx="128" cy="102" r="43" fill="#dcb08f"/>
+  <path d="M80 92c0-31 25-56 48-56s48 25 48 56c-12-8-23-12-35-12h-26c-12 0-23 4-35 12z" fill="#23201f"/>
+  <rect x="95" y="95" width="28" height="18" rx="8" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <rect x="133" y="95" width="28" height="18" rx="8" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <path d="M123 104h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M104 122c8 5 20 5 28 0" stroke="#9a6b49" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M101 138c8-9 18-14 27-14s20 5 28 14" fill="#35261d" fill-opacity="0.5"/>
+</svg>

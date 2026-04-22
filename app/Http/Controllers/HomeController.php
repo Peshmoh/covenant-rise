@@ -111,19 +111,46 @@ class HomeController extends Controller
 
         $testimonies = [
             [
-                'quote' => 'I came hungry for direction and found a family that teaches the Word with kindness and conviction.',
-                'name' => 'Sarah A.',
-                'role' => 'Member, Ruai',
+                'quote' => 'I came for prayer and found a church family that kept checking on me long after the service ended.',
+                'name' => 'Mercy W.',
+                'role' => 'Member, Kasarani',
+                'avatar' => 'images/testimonials/avatar-mercy.svg',
+                'stars' => 5,
             ],
             [
-                'quote' => 'Prayer meetings here helped me rebuild my rhythm with God. My life feels ordered again.',
-                'name' => 'Michael K.',
+                'quote' => 'The teaching is clear, biblical, and practical. It helped me rebuild my walk with God step by step.',
+                'name' => 'Daniel K.',
+                'role' => 'Youth Leader, Ruai',
+                'avatar' => 'images/testimonials/avatar-daniel.svg',
+                'stars' => 5,
+            ],
+            [
+                'quote' => 'My children love church now, and our home feels lighter because prayer has become part of our week.',
+                'name' => 'Faith N.',
+                'role' => 'Parent, Eastlands',
+                'avatar' => 'images/testimonials/avatar-faith.svg',
+                'stars' => 5,
+            ],
+            [
+                'quote' => 'The worship, the Word, and the kindness of the team gave me hope in a season that felt very heavy.',
+                'name' => 'Michael O.',
                 'role' => 'Volunteer, Nairobi',
+                'avatar' => 'images/testimonials/avatar-michael.svg',
+                'stars' => 5,
             ],
             [
-                'quote' => 'Our children love church now, and our home has changed because we are growing together.',
-                'name' => 'Faith W.',
-                'role' => 'Parent, Kasarani',
+                'quote' => 'I visited once and stayed because the welcome felt genuine and the message spoke straight to my heart.',
+                'name' => 'Esther M.',
+                'role' => 'Guest, Zimmerman',
+                'avatar' => 'images/testimonials/avatar-esther.svg',
+                'stars' => 5,
+            ],
+            [
+                'quote' => 'Serving here restored my confidence. I now feel useful, seen, and grounded in purpose again.',
+                'name' => 'Brian T.',
+                'role' => 'Worship Team, Thika Road',
+                'avatar' => 'images/testimonials/avatar-brian.svg',
+                'stars' => 5,
             ],
         ];
 

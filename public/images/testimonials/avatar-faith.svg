@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Faith portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d7b88"/>
+      <stop offset="55%" stop-color="#dd6b8f"/>
+      <stop offset="100%" stop-color="#f0c94b"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="128" fill="url(#bg)"/>
+  <circle cx="188" cy="62" r="52" fill="#ffffff" fill-opacity="0.13"/>
+  <circle cx="68" cy="186" r="72" fill="#0d7b88" fill-opacity="0.12"/>
+  <path d="M70 186c11-31 36-50 58-50s47 19 58 50v20H70z" fill="#34486a"/>
+  <path d="M74 94c0-30 24-55 54-55s54 25 54 55c0 14-4 26-11 37H85c-7-11-11-23-11-37z" fill="#4f2f27"/>
+  <circle cx="128" cy="102" r="42" fill="#e3b997"/>
+  <circle cx="112" cy="100" r="4" fill="#3c251a"/>
+  <circle cx="144" cy="100" r="4" fill="#3c251a"/>
+  <path d="M114 115c8 7 20 7 28 0" stroke="#a06c49" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M88 93c8-31 25-50 40-50s32 19 40 50c-10-7-24-11-40-11s-30 4-40 11z" fill="#1e1717"/>
+  <circle cx="96" cy="115" r="2.8" fill="#f4decb"/>
+  <circle cx="160" cy="115" r="2.8" fill="#f4decb"/>
+</svg>

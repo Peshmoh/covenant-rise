@@ -1,0 +1,22 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercy portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1546cf"/>
+      <stop offset="52%" stop-color="#ddcd7a"/>
+      <stop offset="100%" stop-color="#e21818"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="128" fill="url(#bg)"/>
+  <circle cx="196" cy="66" r="56" fill="#ffffff" fill-opacity="0.15"/>
+  <circle cx="58" cy="192" r="74" fill="#e21818" fill-opacity="0.12"/>
+  <path d="M72 186c10-30 35-49 56-49s46 19 56 49v20H72z" fill="#203d73"/>
+  <path d="M74 92c0-33 25-60 54-60s54 27 54 60c0 14-4 27-11 38H85c-7-11-11-24-11-38z" fill="#5e2947"/>
+  <circle cx="128" cy="102" r="42" fill="#f0c39f"/>
+  <circle cx="112" cy="99" r="4" fill="#3c251a"/>
+  <circle cx="144" cy="99" r="4" fill="#3c251a"/>
+  <path d="M114 114c8 7 20 7 28 0" stroke="#9c6a49" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="96" cy="114" r="2.8" fill="#f7e4d3"/>
+  <circle cx="160" cy="114" r="2.8" fill="#f7e4d3"/>
+  <path d="M94 89c0-15 15-31 34-31s34 16 34 31c0 14-3 24-9 32H103c-6-8-9-18-9-32z" fill="#2b1614"/>
+  <path d="M88 137c10-16 26-24 40-24s30 8 40 24" fill="#ffffff" fill-opacity="0.08"/>
+</svg>
