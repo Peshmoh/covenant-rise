@@ -23,7 +23,7 @@
                     <a href="{{ route('about') }}">Our Story</a>
                     <a href="{{ route('about') }}#vision">Vision and Mission</a>
                     <a href="{{ route('leadership') }}">Leadership</a>
-                    <a href="{{ route('services') }}">Our Services</a>
+                    <a href="{{ route('about') }}#services">Our Services</a>
                     <a href="{{ route('visit') }}">Plan a Visit</a>
                 </div>
             </li>

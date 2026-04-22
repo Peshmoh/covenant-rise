@@ -13,6 +13,9 @@ $pageData = static function (
     ?array $primary = null,
     ?array $secondary = null,
     ?string $anchorId = null,
+    array $bodyParagraphs = [],
+    array $actions = [],
+    array $sections = [],
 ): array {
     return compact(
         'pageTitle',
@@ -24,10 +27,14 @@ $pageData = static function (
         'primary',
         'secondary',
         'anchorId',
+        'bodyParagraphs',
+        'actions',
+        'sections',
     );
 };
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::redirect('/services', '/about#services')->name('services');
 
 $staticPages = [
     '/about' => [
@@ -36,8 +43,8 @@ $staticPages = [
             'Our Story',
             'About',
             'A covenant family built to help people grow in Christ',
-            'Covenant Rise Ministries exists to raise believers who know the Word, love prayer, and live with purpose in everyday life. This page also holds the vision and mission that shape how we serve.',
-            'Learn the heart behind Covenant Rise Ministries and what we believe.',
+            'Covenant Rise Ministries is more than a Sunday gathering. We are a family learning to worship Jesus with sincerity, grow in the Word, and serve people with practical love. Our aim is to help every person belong, believe, and become all God has called them to be.',
+            'Learn the heart behind Covenant Rise Ministries, what we believe, and how we serve together in Nairobi.',
             [
                 [
                     'icon' => 'fas fa-eye',
@@ -54,10 +61,55 @@ $staticPages = [
                     'title' => 'Culture',
                     'text' => 'Jesus is the center of our worship, teaching, service, and daily life.',
                 ],
+                [
+                    'icon' => 'fas fa-hands-holding-heart',
+                    'title' => 'Community Care',
+                    'text' => 'We value pastoral care, follow-up, and practical support for families, youth, and first-time guests.',
+                ],
             ],
-            ['label' => 'Plan a Visit', 'url' => '/visit'],
-            ['label' => 'Our Services', 'url' => '/services'],
+            null,
+            null,
             'vision',
+            [
+                'Covenant Rise Ministries began with a simple desire to create a church home where faith feels alive, the Bible remains central, and prayer shapes everyday life. We believe the local church should be a place of healing, discipleship, and courage.',
+                'Our services are designed to help people take their next step in Christ. From Sunday worship to midweek study and prayer meetings, we gather around the Word, encourage one another, and make room for the presence of God to transform lives.',
+                'As you get to know us, you will find a ministry that values excellence without losing warmth, truth without losing grace, and conviction without losing compassion. We would love to walk with you, pray with you, and help you find your place in the family.',
+            ],
+            [
+                ['label' => 'Our Services', 'url' => '#services', 'class' => 'btn btn-outline'],
+                ['label' => 'Plan a Visit', 'url' => '/visit', 'class' => 'btn btn-gold'],
+                ['label' => 'Contact Us', 'url' => '/contact', 'class' => 'btn btn-outline'],
+            ],
+            [
+                [
+                    'id' => 'services',
+                    'eyebrow' => 'Our Services',
+                    'title' => 'Weekly gatherings that keep us rooted and growing',
+                    'copy' => 'These are the main rhythms of ministry that shape how we worship, learn, pray, and serve together as a church family.',
+                    'cards' => [
+                        [
+                            'icon' => 'fas fa-sun',
+                            'title' => 'Sunday Worship',
+                            'text' => 'Our main gathering for worship, teaching, prayer, and ministry. We come together each Sunday to hear the Word and celebrate Christ.',
+                        ],
+                        [
+                            'icon' => 'fas fa-book-open',
+                            'title' => 'Midweek Study',
+                            'text' => 'A focused time to open the Bible, ask questions, and build strong spiritual foundations in a smaller, warmer setting.',
+                        ],
+                        [
+                            'icon' => 'fas fa-fire',
+                            'title' => 'Prayer Nights',
+                            'text' => 'A place for intercession, worship, and fresh strength. We believe prayer changes lives, families, and communities.',
+                        ],
+                        [
+                            'icon' => 'fas fa-people-group',
+                            'title' => 'Outreach and Care',
+                            'text' => 'Practical ministry through follow-up, support, and serving people beyond the church walls with compassion and consistency.',
+                        ],
+                    ],
+                ],
+            ],
         ),
     ],
     '/leadership' => [
@@ -87,35 +139,6 @@ $staticPages = [
             ],
             ['label' => 'Contact Us', 'url' => '/contact'],
             ['label' => 'About Us', 'url' => '/about'],
-        ),
-    ],
-    '/services' => [
-        'name' => 'services',
-        'data' => $pageData(
-            'Services',
-            'Worship Rhythms',
-            'Gatherings that help people stay rooted and encouraged',
-            'Our weekly rhythms are designed to help the church family worship, learn, and pray together.',
-            'See the service times and ministry rhythms at Covenant Rise Ministries.',
-            [
-                [
-                    'icon' => 'fas fa-sun',
-                    'title' => 'Sunday Worship',
-                    'text' => 'Our main gathering for worship, the Word, and ministry.',
-                ],
-                [
-                    'icon' => 'fas fa-book-open',
-                    'title' => 'Midweek Study',
-                    'text' => 'A space for careful teaching, questions, and spiritual growth.',
-                ],
-                [
-                    'icon' => 'fas fa-fire',
-                    'title' => 'Prayer Nights',
-                    'text' => 'Focused evenings of prayer, intercession, and worship.',
-                ],
-            ],
-            ['label' => 'Plan a Visit', 'url' => '/visit'],
-            ['label' => 'Watch Online', 'url' => '/online-church'],
         ),
     ],
     '/visit' => [
@@ -327,27 +350,44 @@ $staticPages = [
             'Contact',
             'Stay Connected',
             'Reach us by WhatsApp, email, or in person',
-            'We would love to hear from you and help you take your next step. Message us on WhatsApp at ' . config('church.whatsapp') . ', and our team will connect with you.',
-            'Contact Covenant Rise Ministries.',
+            'We would love to hear from you and help you take your next step. Message us on WhatsApp at ' . config('church.whatsapp') . ', send us an email, or open the map for directions to our meeting place.',
+            'Contact Covenant Rise Ministries in Nairobi.',
             [
                 [
                     'icon' => 'fab fa-whatsapp',
                     'title' => 'WhatsApp Us',
                     'text' => 'Send a message to ' . config('church.whatsapp') . ' and we will reply as soon as possible.',
+                    'url' => 'https://wa.me/' . preg_replace('/\D+/', '', config('church.whatsapp')),
+                    'target' => '_blank',
+                    'rel' => 'noopener noreferrer',
                 ],
                 [
                     'icon' => 'fas fa-envelope',
                     'title' => 'Send Email',
-                    'text' => 'Send a note anytime and our team will reply as soon as possible.',
+                    'text' => 'Send a note anytime to ' . config('church.email') . ' and our team will reply as soon as possible.',
+                    'url' => 'mailto:' . config('church.email'),
                 ],
                 [
                     'icon' => 'fas fa-location-dot',
                     'title' => 'Visit In Person',
-                    'text' => 'Join us in Nairobi and connect with the church family in person.',
+                    'text' => 'Main Sanctuary, Nairobi, Kenya. We meet in a welcoming, easy-to-find location with parking nearby and clear directions from the main road.',
+                    'url' => 'https://www.google.com/maps/search/?api=1&query=Covenant+Rise+Ministries+Nairobi+Kenya',
+                    'target' => '_blank',
+                    'rel' => 'noopener noreferrer',
                 ],
             ],
-            ['label' => 'WhatsApp Us', 'url' => 'https://wa.me/' . preg_replace('/\D+/', '', config('church.whatsapp'))],
-            ['label' => 'Prayer Request', 'url' => '/prayer'],
+            null,
+            null,
+            null,
+            [
+                'We are happy to connect with you and make the next step simple. If you need prayer, want to plan a visit, or need directions, our team is ready to help.',
+                'The fastest way to reach us is WhatsApp. You can also email us directly or tap the location card to open Google Maps for a quick route to the church.',
+            ],
+            [
+                ['label' => 'WhatsApp Us', 'url' => 'https://wa.me/' . preg_replace('/\D+/', '', config('church.whatsapp')), 'class' => 'btn btn-gold', 'target' => '_blank', 'rel' => 'noopener noreferrer'],
+                ['label' => 'Plan a Visit', 'url' => '/visit', 'class' => 'btn btn-outline'],
+                ['label' => 'Email Us', 'url' => 'mailto:' . config('church.email'), 'class' => 'btn btn-outline'],
+            ],
         ),
     ],
 ];
