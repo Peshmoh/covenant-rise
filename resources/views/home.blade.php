@@ -60,15 +60,24 @@
 
             <div class="hero-right">
                 <div class="logo-showcase card">
-                    <img
-                        src="{{ asset('images/logo-full.png') }}"
-                        alt="{{ config('church.name') }} logo"
-                        class="hero-logo"
-                        loading="eager"
-                        fetchpriority="high"
-                        width="900"
-                        height="958"
-                    >
+                    <div class="hero-flipbook" data-hero-flipbook aria-label="Hero image flipbook">
+                        @foreach($heroSlides as $slide)
+                            <figure
+                                class="hero-flipbook-page {{ $slide['class'] }} {{ $loop->first ? 'is-active' : ($loop->index === 1 ? 'is-next' : 'is-prev') }}"
+                                data-hero-page
+                                aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
+                            >
+                                <img
+                                    src="{{ asset($slide['image']) }}"
+                                    alt="{{ $slide['alt'] }}"
+                                    loading="eager"
+                                    decoding="async"
+                                    width="900"
+                                    height="958"
+                                >
+                            </figure>
+                        @endforeach
+                    </div>
                 </div>
 
                 <div class="service-card">

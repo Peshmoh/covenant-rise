@@ -31,6 +31,24 @@ class HomeController extends Controller
             ],
         ];
 
+        $heroSlides = [
+            [
+                'image' => 'images/hero-flip/congerdesign-gerbera-1250287_1920.jpg',
+                'alt' => 'A red flower rising through soft green grass',
+                'class' => 'hero-flipbook-page--flower',
+            ],
+            [
+                'image' => 'images/hero-flip/fotorieth-bible-1089968_1920.jpg',
+                'alt' => 'A sweeping waterfall flowing through a dramatic canyon',
+                'class' => 'hero-flipbook-page--waterfall',
+            ],
+            [
+                'image' => 'images/hero-flip/ichristian-hands-6700891_1920.jpg',
+                'alt' => 'Hands joined together in prayer and support',
+                'class' => 'hero-flipbook-page--hands',
+            ],
+        ];
+
         $aboutHighlights = [
             [
                 'icon' => 'fas fa-cross',
@@ -164,6 +182,7 @@ class HomeController extends Controller
 
         return view('home', compact(
             'serviceTimes',
+            'heroSlides',
             'aboutHighlights',
             'latestSermons',
             'upcomingEvents',
