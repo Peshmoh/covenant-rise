@@ -326,14 +326,14 @@ $staticPages = [
         'data' => $pageData(
             'Contact',
             'Stay Connected',
-            'Reach us by phone, email, or in person',
-            'We would love to hear from you and help you take your next step.',
+            'Reach us by WhatsApp, email, or in person',
+            'We would love to hear from you and help you take your next step. Message us on WhatsApp at ' . config('church.whatsapp') . ', and our team will connect with you.',
             'Contact Covenant Rise Ministries.',
             [
                 [
-                    'icon' => 'fas fa-phone',
-                    'title' => 'Call Us',
-                    'text' => 'Use the phone number in the top bar to reach the church office.',
+                    'icon' => 'fab fa-whatsapp',
+                    'title' => 'WhatsApp Us',
+                    'text' => 'Send a message to ' . config('church.whatsapp') . ' and we will reply as soon as possible.',
                 ],
                 [
                     'icon' => 'fas fa-envelope',
@@ -346,7 +346,7 @@ $staticPages = [
                     'text' => 'Join us in Nairobi and connect with the church family in person.',
                 ],
             ],
-            ['label' => 'Plan a Visit', 'url' => '/visit'],
+            ['label' => 'WhatsApp Us', 'url' => 'https://wa.me/' . preg_replace('/\D+/', '', config('church.whatsapp'))],
             ['label' => 'Prayer Request', 'url' => '/prayer'],
         ),
     ],
