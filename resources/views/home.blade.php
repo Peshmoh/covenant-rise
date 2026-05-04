@@ -61,22 +61,56 @@
 
         <div class="hero-inner">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-cross"></i>
-                    Welcome to {{ config('church.name') }}
-                </div>
-
-                <p class="hero-sub-title">Worship, prayer, and purpose </p>
-
                 <h1 class="hero-title">
-                    <span class="line-italic">A church family</span>
-                    <span class="line-gold">Rooted in Christ,</span>
-                    Living with Purpose
+                    <span class="line-gold">Welcome</span>
                 </h1>
 
                 <p class="hero-tagline">
-                    We are building a warm and faithful church family shaped by the Word, prayer, worship, and service.
+                    Welcome to Covenant Rise Ministries! We're thrilled to have you. Here, you'll find yourself Rising in Purpose, Transformed by Grace, and Empowered to Impact.
                 </p>
+
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h3>Service Times</h3>
+                        <span>This Week</span>
+                    </div>
+
+                    @foreach($serviceTimes as $service)
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="{{ $service['icon'] }}"></i>
+                            </div>
+                            <div class="service-info">
+                                <div class="service-name">{{ $service['name'] }}</div>
+                                <div class="service-time">{{ $service['time'] }}</div>
+                            </div>
+                            <i class="fas fa-chevron-right service-arrow"></i>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="logo-showcase card">
+                    <div class="hero-flipbook" data-hero-flipbook aria-label="Hero image flipbook">
+                        @foreach($heroSlides as $slide)
+                            <figure
+                                class="hero-flipbook-page {{ $slide['class'] }} {{ $loop->first ? 'is-active' : ($loop->index === 1 ? 'is-next' : 'is-prev') }}"
+                                data-hero-page
+                                aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
+                            >
+                                <img
+                                    src="{{ asset($slide['image']) }}"
+                                    alt="{{ $slide['alt'] }}"
+                                    loading="eager"
+                                    decoding="async"
+                                    width="900"
+                                    height="958"
+                                >
+                            </figure>
+                        @endforeach
+                    </div>
+                </div>
 
                 <div class="hero-actions">
                     <a href="{{ route('visit') }}" class="btn btn-hero-primary">
@@ -105,49 +139,6 @@
                         <div class="stat-num" data-val="5">5</div>
                         <div class="stat-label">Ministry Branches</div>
                     </div>
-                </div>
-            </div>
-
-            <div class="hero-right">
-                <div class="logo-showcase card">
-                    <div class="hero-flipbook" data-hero-flipbook aria-label="Hero image flipbook">
-                        @foreach($heroSlides as $slide)
-                            <figure
-                                class="hero-flipbook-page {{ $slide['class'] }} {{ $loop->first ? 'is-active' : ($loop->index === 1 ? 'is-next' : 'is-prev') }}"
-                                data-hero-page
-                                aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
-                            >
-                                <img
-                                    src="{{ asset($slide['image']) }}"
-                                    alt="{{ $slide['alt'] }}"
-                                    loading="eager"
-                                    decoding="async"
-                                    width="900"
-                                    height="958"
-                                >
-                            </figure>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-card-header">
-                        <h3>Service Times</h3>
-                        <span>This Week</span>
-                    </div>
-
-                    @foreach($serviceTimes as $service)
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="{{ $service['icon'] }}"></i>
-                            </div>
-                            <div class="service-info">
-                                <div class="service-name">{{ $service['name'] }}</div>
-                                <div class="service-time">{{ $service['time'] }}</div>
-                            </div>
-                            <i class="fas fa-chevron-right service-arrow"></i>
-                        </div>
-                    @endforeach
                 </div>
             </div>
         </div>
