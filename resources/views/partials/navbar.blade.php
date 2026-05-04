@@ -16,7 +16,7 @@
             </li>
 
               <li>
-                <a href="{{ route('media') }}#blogs" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Insights</a>
+                <a href="{{ route('media') }}#blogs" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Teaching/Sermon</a>
             </li>
            
             <li class="has-dropdown">
@@ -35,13 +35,13 @@
                     Media <i class="fas fa-chevron-down caret"></i>
                 </a>
                 <div class="dropdown">
-                    <a href="{{ route('media') }}#sermons">Sermons</a>
+                   
                     <a href="{{ route('media') }}#gallery">Gallery</a>
                 </div>
             </li>
 
             <li>
-                <a href="{{ route('ministries') }}" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Ministries</a>
+                <a href="{{ route('ministries') }}" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Outreach</a>
             </li>
 
 
@@ -52,6 +52,7 @@
                 <div class="dropdown">
                     <a href="{{ route('about') }}#story">Our Story</a>
                     <a href="{{ route('about') }}#vision-mission">Vision &amp; Mission</a>
+                    <a href="{{ route('about') }}#beliefs">What We Believe</a>
                     <a href="{{ route('about') }}#leadership">Leadership</a>
                     <a href="{{ route('about') }}#services">Our Services</a>
                 </div>

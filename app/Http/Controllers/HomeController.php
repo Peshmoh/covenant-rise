@@ -53,24 +53,24 @@ class HomeController extends Controller
             [
                 'icon' => 'fas fa-cross',
                 'title' => 'Christ First',
-                'text' => 'Everything we do points back to Jesus, the Word, and a life shaped by grace.',
+                'text' => 'We believe in the Lordship of Jesus Christ as the foundation for life and godliness.',
             ],
             [
                 'icon' => 'fas fa-hands-praying',
-                'title' => 'Prayerful Culture',
-                'text' => 'We build a church that knows how to seek God, listen well, and respond in faith.',
+                'title' => 'Word and Power',
+                'text' => 'We teach the uncompromised Word of God with clarity, revelation, and spiritual insight.',
             ],
             [
                 'icon' => 'fas fa-people-group',
-                'title' => 'Shared Purpose',
-                'text' => 'We want every generation to feel seen, equipped, and ready to serve together.',
+                'title' => 'Divine Purpose',
+                'text' => 'We equip believers to grow, overcome, and walk in victory through Christ.',
             ],
         ];
 
         $latestSermons = [
             [
                 'title' => 'Faith for the Long Road',
-                'speaker' => 'Pastor Daniel Mwangi',
+                'speaker' => 'Apostle Humphrey Lijina',
                 'date' => 'Sunday, 14 April 2026',
                 'duration' => '42 min',
                 'category' => 'Sunday Service',
@@ -79,7 +79,7 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'When Grace Opens the Door',
-                'speaker' => 'Pastor Esther Wanjiku',
+                'speaker' => 'Apostle Humphrey Lijina',
                 'date' => 'Sunday, 7 April 2026',
                 'duration' => '35 min',
                 'category' => 'Teaching Series',
@@ -88,7 +88,7 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'Prayer That Changes Atmospheres',
-                'speaker' => 'Pastor Joseph Otieno',
+                'speaker' => 'Apostle Humphrey Lijina',
                 'date' => 'Sunday, 31 March 2026',
                 'duration' => '47 min',
                 'category' => 'Prayer Night',

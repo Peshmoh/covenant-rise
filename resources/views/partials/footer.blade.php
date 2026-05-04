@@ -6,7 +6,7 @@
                     <img src="{{ asset('images/WhatsApp Image 2026-05-04 at 2.33.59 PM.jpeg') }}" alt="{{ config('church.name') }} logo" class="footer-logo" loading="lazy" width="1254" height="1254">
                 </a>
                 <p class="footer-copy">
-                    A house of worship, prayer, and covenant purpose in Nairobi, Kenya.
+                    A Christ-centered ministry raising believers in truth, power, and divine purpose.
                 </p>
                 <div class="footer-social">
                     <a href="{{ config('church.facebook') }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -50,7 +50,7 @@
 
         <div class="footer-bottom">
             <p>&copy; {{ date('Y') }} {{ config('church.name') }}. All rights reserved.</p>
-            <p>Rising in covenant, living in purpose.</p>
+            <p>Rising in covenant, transformed by grace, empowered to impact.</p>
         </div>
     </div>
 </footer>

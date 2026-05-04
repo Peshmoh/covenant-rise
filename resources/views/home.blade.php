@@ -66,7 +66,7 @@
                 </h1>
 
                 <p class="hero-tagline">
-                    Welcome to Covenant Rise Ministries! We're blessed to have you. Here, you'll find yourself Rising in Purpose, Transformed by Grace, and Empowered to Impact.
+                    Welcome to Covenant Rise, a place where lives are transformed by the Word and power of God. Here, we equip, teach, and raise believers into their divine purpose through truth, revelation, and spiritual growth. You are welcome. You belong. It is your time to rise.
                 </p>
 
                 <div class="service-card">

@@ -29,6 +29,7 @@
                 <div class="mobile-nav-submenu">
                     <a href="{{ route('about') }}#story">Our Story</a>
                     <a href="{{ route('about') }}#vision-mission">Vision &amp; Mission</a>
+                    <a href="{{ route('about') }}#beliefs">What We Believe</a>
                     <a href="{{ route('about') }}#leadership">Leadership</a>
                     <a href="{{ route('about') }}#services">Our Services</a>
                 </div>
