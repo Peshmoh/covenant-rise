@@ -15,18 +15,10 @@
                 <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
             </li>
 
-           
-            <li class="has-dropdown">
-                <a href="{{ route('media') }}" class="nav-link {{ request()->routeIs('media*', 'sermons', 'blogs', 'gallery') ? 'active' : '' }}">
-                    Media <i class="fas fa-chevron-down caret"></i>
-                </a>
-                <div class="dropdown">
-                    <a href="{{ route('media') }}#sermons">Sermons</a>
-                    <a href="{{ route('media') }}#blogs">Blogs</a>
-                    <a href="{{ route('media') }}#gallery">Gallery</a>
-                </div>
+              <li>
+                <a href="{{ route('media') }}#blogs" class="nav-link {{ request()->routeIs('ministries*') ? 'active' : '' }}">Insights</a>
             </li>
-
+           
             <li class="has-dropdown">
                 <a href="{{ route('events') }}" class="nav-link {{ request()->routeIs('events*', 'visit') ? 'active' : '' }}">
                     Events <i class="fas fa-chevron-down caret"></i>
@@ -35,6 +27,16 @@
                     <a href="{{ route('events') }}#upcoming-events">Upcoming Events</a>
                     <a href="{{ route('events') }}#past-events">Past Events</a>
                     <a href="{{ route('visit') }}">Plan a Visit</a>
+                </div>
+            </li>
+ 
+             <li class="has-dropdown">
+                <a href="{{ route('media') }}" class="nav-link {{ request()->routeIs('media*', 'sermons', 'blogs', 'gallery') ? 'active' : '' }}">
+                    Media <i class="fas fa-chevron-down caret"></i>
+                </a>
+                <div class="dropdown">
+                    <a href="{{ route('media') }}#sermons">Sermons</a>
+                    <a href="{{ route('media') }}#gallery">Gallery</a>
                 </div>
             </li>
 
