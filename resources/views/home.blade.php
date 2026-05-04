@@ -16,7 +16,7 @@
                     Welcome to {{ config('church.name') }}
                 </div>
 
-                <p class="hero-sub-title">Worship, prayer, and purpose in Nairobi</p>
+                <p class="hero-sub-title">Worship, prayer, and purpose </p>
 
                 <h1 class="hero-title">
                     <span class="line-italic">A church family</span>
