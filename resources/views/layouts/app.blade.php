@@ -13,7 +13,7 @@
 
     @stack('styles')
 </head>
-<body>
+<body class="@yield('body_class')">
     @include('partials.mobile-nav')
     @include('partials.navbar')
 

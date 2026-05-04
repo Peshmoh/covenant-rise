@@ -2,8 +2,58 @@
 
 @section('title', 'Home - ' . config('church.name'))
 @section('meta_description', config('church.tagline') . ' - Worship, prayer, and purpose in Nairobi, Kenya.')
+@section('body_class', 'home-page')
 
 @section('content')
+    <section class="top-hero" aria-label="Church welcome">
+        <div class="top-hero-bg"></div>
+
+        <div class="top-hero-inner">
+            <h1 class="top-hero-title">
+                <span>Grow in Faith.</span>
+                Serve with Love.
+            </h1>
+
+            <a href="{{ route('visit') }}" class="top-hero-cta">
+                Plan Your Visit
+            </a>
+        </div>
+
+        <div class="top-hero-links" aria-label="Church quick links">
+            <a href="{{ route('events') }}" class="top-hero-card">
+                <span class="top-hero-icon"><i class="fas fa-calendar-days"></i></span>
+                <span>
+                    <strong>Upcoming Events</strong>
+                    <small>Stay up to date with church activities</small>
+                </span>
+            </a>
+
+            <a href="{{ route('media') }}#sermons" class="top-hero-card">
+                <span class="top-hero-icon top-hero-icon--blue"><i class="fas fa-video"></i></span>
+                <span>
+                    <strong>Latest Sermons</strong>
+                    <small>Watch or listen to recent messages</small>
+                </span>
+            </a>
+
+            <a href="{{ route('prayer') }}" class="top-hero-card">
+                <span class="top-hero-icon top-hero-icon--teal"><i class="fas fa-hands-praying"></i></span>
+                <span>
+                    <strong>Prayer Requests</strong>
+                    <small>Submit your prayer needs online</small>
+                </span>
+            </a>
+
+            <a href="{{ route('ministries') }}" class="top-hero-card">
+                <span class="top-hero-icon top-hero-icon--gold"><i class="fas fa-hand-holding-heart"></i></span>
+                <span>
+                    <strong>Get Involved</strong>
+                    <small>Find a place to serve and grow</small>
+                </span>
+            </a>
+        </div>
+    </section>
+
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-pattern"></div>
