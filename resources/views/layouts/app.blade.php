@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('meta_description', config('church.tagline'))">
     <title>@yield('title', config('church.name'))</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/WhatsApp Image 2026-05-04 at 2.33.59 PM.jpeg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 

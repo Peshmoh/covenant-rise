@@ -3,7 +3,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="{{ route('home') }}" class="footer-logo-link" aria-label="{{ config('church.name') }}">
-                    <img src="{{ asset('images/logo-full.png') }}" alt="{{ config('church.name') }} logo" class="footer-logo" loading="lazy" width="900" height="958">
+                    <img src="{{ asset('images/WhatsApp Image 2026-05-04 at 2.33.59 PM.jpeg') }}" alt="{{ config('church.name') }} logo" class="footer-logo" loading="lazy" width="1254" height="1254">
                 </a>
                 <p class="footer-copy">
                     A house of worship, prayer, and covenant purpose in Nairobi, Kenya.

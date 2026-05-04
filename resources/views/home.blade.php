@@ -66,7 +66,7 @@
                 </h1>
 
                 <p class="hero-tagline">
-                    Welcome to Covenant Rise Ministries! We're thrilled to have you. Here, you'll find yourself Rising in Purpose, Transformed by Grace, and Empowered to Impact.
+                    Welcome to Covenant Rise Ministries! We're blessed to have you. Here, you'll find yourself Rising in Purpose, Transformed by Grace, and Empowered to Impact.
                 </p>
 
                 <div class="service-card">
@@ -121,6 +121,9 @@
                     </a>
                     <a href="{{ route('give') }}" class="btn btn-hero-secondary">
                         <i class="fas fa-hand-holding-heart"></i> Give
+                    </a>
+                    <a href="{{ route('prayer') }}" class="btn btn-hero-prayer">
+                        <i class="fas fa-hands-praying"></i> Prayer
                     </a>
                 </div>
 

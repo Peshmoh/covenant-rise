@@ -2,7 +2,7 @@
     <div class="inner">
         <a href="{{ route('home') }}" class="logo" aria-label="{{ config('church.name') }}">
             <div class="logo-emblem">
-                <img src="{{ asset('images/logo-mark.png') }}" alt="" aria-hidden="true">
+                <img src="{{ asset('images/WhatsApp Image 2026-05-04 at 2.33.59 PM.jpeg') }}" alt="" aria-hidden="true">
             </div>
             <div class="logo-text">
                 <span class="logo-name">Covenant <span>Rise</span></span>
