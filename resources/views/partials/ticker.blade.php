@@ -1,6 +1,6 @@
 @php
     $tickerItems = $tickerItems ?? [
-        '1st Service: 8:00 AM – 10:00 AM,
+        'Sunday service every week at 9:00 AM',
         'Friday prayer and intercession at 6:00 PM',
         'Wednesday Bible study at 7:00 PM',
         'Online church live on YouTube and Facebook',
