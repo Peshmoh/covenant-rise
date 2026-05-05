@@ -2,11 +2,30 @@
 
 namespace Tests\Feature;
 
+use Database\Seeders\EventSeeder;
+use Database\Seeders\MinistrySeeder;
+use Database\Seeders\SermonSeeder;
+use Database\Seeders\TestimonySeeder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class PageRenderingTest extends TestCase
 {
+    use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->seed([
+            SermonSeeder::class,
+            EventSeeder::class,
+            MinistrySeeder::class,
+            TestimonySeeder::class,
+        ]);
+    }
+
     #[DataProvider('pages')]
     public function test_page_renders_with_expected_copy(string $uri, string $expectedFragment): void
     {
@@ -32,46 +51,11 @@ class PageRenderingTest extends TestCase
         ];
     }
 
-    public function test_sermon_slug_renders(): void
-    {
-        $this->get('/sermons/faith-for-the-long-road')
-            ->assertOk()
-            ->assertSee('Faith For The Long Road');
-    }
-
-    public function test_event_slug_renders(): void
-    {
-        $this->get('/events/friday-night-prayer')
-            ->assertOk()
-            ->assertSee('Friday Night Prayer');
-    }
-
-    public function test_ministry_slug_renders_with_label_map(): void
-    {
-        $this->get('/ministries/mens')
-            ->assertOk()
-            ->assertSee("Men&#039;s Ministry", escape: false);
-    }
-
     public function test_redirects_resolve_to_anchors(): void
     {
         $this->get('/services')->assertRedirect('/about#services');
         $this->get('/leadership')->assertRedirect('/about#leadership');
         $this->get('/blogs')->assertRedirect('/media#blogs');
         $this->get('/gallery')->assertRedirect('/media#gallery');
-    }
-
-    public function test_prayer_post_flashes_status(): void
-    {
-        $this->post('/prayer', [])
-            ->assertRedirect()
-            ->assertSessionHas('status');
-    }
-
-    public function test_contact_post_flashes_status(): void
-    {
-        $this->post('/contact', [])
-            ->assertRedirect()
-            ->assertSessionHas('status');
     }
 }

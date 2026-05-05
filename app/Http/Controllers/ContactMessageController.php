@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactMessageRequest;
+use App\Models\ContactMessage;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ContactMessageController extends Controller
@@ -60,8 +61,10 @@ class ContactMessageController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreContactMessageRequest $request): RedirectResponse
     {
+        ContactMessage::create($request->validated());
+
         return back()->with('status', 'Thanks. Your message has been received.');
     }
 }

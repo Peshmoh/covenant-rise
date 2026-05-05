@@ -2,12 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\View\View;
 
 class EventController extends Controller
 {
     public function index(): View
     {
+        $upcoming = Event::upcoming()->take(6)->get();
+        $past = Event::past()->take(6)->get();
+
+        $upcomingCards = $upcoming->map(fn (Event $event) => [
+            'icon' => 'fas fa-calendar-days',
+            'title' => $event->title,
+            'text' => $event->excerpt,
+            'url' => $event->url,
+        ])->all();
+
+        $pastCards = $past->map(fn (Event $event) => [
+            'icon' => 'fas fa-photo-film',
+            'title' => $event->title,
+            'text' => $event->excerpt,
+            'url' => $event->url,
+        ])->all();
+
         return view('page', [
             'pageTitle' => 'Events',
             'eyebrow' => 'Church Calendar',
@@ -33,82 +51,48 @@ class EventController extends Controller
                     'eyebrow' => 'Upcoming Events',
                     'title' => 'What is coming up next',
                     'copy' => 'These gatherings are coming up soon and help us worship, grow, and serve together.',
-                    'cards' => [
-                        [
-                            'icon' => 'fas fa-calendar-days',
-                            'title' => 'Friday Prayer Night',
-                            'text' => 'Every Friday at 6:00 PM in the main sanctuary with worship and intercession.',
-                        ],
-                        [
-                            'icon' => 'fas fa-church',
-                            'title' => 'Sunday Worship',
-                            'text' => 'Every Sunday at 9:00 AM for worship, teaching, and fellowship.',
-                        ],
-                        [
-                            'icon' => 'fas fa-people-group',
-                            'title' => 'Youth Gathering',
-                            'text' => 'A time for students and young adults to worship, learn, and grow together.',
-                        ],
-                    ],
+                    'cards' => $upcomingCards,
                 ],
                 [
                     'id' => 'past-events',
                     'eyebrow' => 'Past Events',
                     'title' => 'Moments we have celebrated together',
                     'copy' => 'These are examples of the kind of gatherings and ministry moments we have shared as a church family.',
-                    'cards' => [
-                        [
-                            'icon' => 'fas fa-photo-film',
-                            'title' => 'Community Outreach Sunday',
-                            'text' => 'Serving neighbors with prayer, practical help, and encouragement.',
-                        ],
-                        [
-                            'icon' => 'fas fa-microphone-lines',
-                            'title' => 'Revival Night',
-                            'text' => 'A night of worship, testimony, and prayer that stirred the whole church.',
-                        ],
-                        [
-                            'icon' => 'fas fa-people-roof',
-                            'title' => 'Family Sunday',
-                            'text' => 'A special gathering of every generation in one united service.',
-                        ],
-                    ],
+                    'cards' => $pastCards,
                 ],
             ],
         ]);
     }
 
-    public function show(string $slug): View
+    public function show(Event $event): View
     {
-        $label = ucwords(str_replace('-', ' ', $slug));
-
         return view('page', [
-            'pageTitle' => $label,
+            'pageTitle' => $event->title,
             'eyebrow' => 'Events',
-            'headline' => $label,
-            'body' => 'This event page is ready for date details, registration, and practical information.',
-            'metaDescription' => 'Browse an event page from Covenant Rise Ministries.',
+            'headline' => $event->title,
+            'body' => $event->excerpt,
+            'metaDescription' => $event->excerpt,
             'highlights' => [
                 [
                     'icon' => 'fas fa-calendar-days',
-                    'title' => 'Event Details',
-                    'text' => 'Add schedule, location, and any registration instructions here.',
+                    'title' => $event->starts_at->translatedFormat('l, j F Y'),
+                    'text' => $event->time,
                 ],
                 [
                     'icon' => 'fas fa-map-location-dot',
                     'title' => 'Location',
-                    'text' => 'This area can hold directions, a map, or arrival notes.',
+                    'text' => $event->location,
                 ],
                 [
                     'icon' => 'fas fa-circle-info',
                     'title' => 'What to Expect',
-                    'text' => 'Share a quick guide so guests know how to prepare.',
+                    'text' => 'Join us for worship, teaching, and fellowship.',
                 ],
             ],
             'primary' => ['label' => 'Back to Events', 'url' => '/events'],
             'secondary' => ['label' => 'Plan a Visit', 'url' => '/visit'],
             'anchorId' => null,
-            'bodyParagraphs' => [],
+            'bodyParagraphs' => array_filter([$event->body]),
             'actions' => [],
             'sections' => [],
         ]);

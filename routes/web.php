@@ -24,15 +24,15 @@ Route::get('/media', [MediaController::class, 'index'])->name('media');
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/ministries', [MinistryController::class, 'index'])->name('ministries');
 
-Route::get('/sermons/{slug}', [SermonController::class, 'show'])->name('sermons.show');
-Route::get('/events/{slug}', [EventController::class, 'show'])->name('events.show');
-Route::get('/ministries/{slug}', [MinistryController::class, 'show'])->name('ministries.show');
+Route::get('/sermons/{sermon:slug}', [SermonController::class, 'show'])->name('sermons.show');
+Route::get('/events/{event:slug}', [EventController::class, 'show'])->name('events.show');
+Route::get('/ministries/{ministry:slug}', [MinistryController::class, 'show'])->name('ministries.show');
 
 Route::get('/prayer', [PrayerRequestController::class, 'create'])->name('prayer');
-Route::post('/prayer', [PrayerRequestController::class, 'store'])->name('prayer.store');
+Route::post('/prayer', [PrayerRequestController::class, 'store'])->middleware('throttle:6,1')->name('prayer.store');
 
 Route::get('/contact', [ContactMessageController::class, 'create'])->name('contact');
-Route::post('/contact', [ContactMessageController::class, 'store'])->name('contact.send');
+Route::post('/contact', [ContactMessageController::class, 'store'])->middleware('throttle:6,1')->name('contact.send');
 
 Route::redirect('/services', '/about#services')->name('services');
 Route::redirect('/leadership', '/about#leadership')->name('leadership');

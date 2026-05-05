@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePrayerRequestRequest;
+use App\Models\PrayerRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PrayerRequestController extends Controller
@@ -42,8 +43,10 @@ class PrayerRequestController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StorePrayerRequestRequest $request): RedirectResponse
     {
+        PrayerRequest::create($request->validated());
+
         return back()->with('status', 'Thanks. Your prayer request has been received.');
     }
 }
